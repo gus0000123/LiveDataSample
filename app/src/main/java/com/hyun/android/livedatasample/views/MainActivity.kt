@@ -1,7 +1,8 @@
-package com.hyun.android.livedatasample
+package com.hyun.android.livedatasample.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.hyun.android.livedatasample.R
 
 class MainActivity : AppCompatActivity() {
 

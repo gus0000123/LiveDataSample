@@ -10,7 +10,7 @@ import com.hyun.android.livedatasample.model.InputMsg
 
 @Database(entities = [InputMsg::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun catDao(): InputMsgDao
+    abstract fun inputMsgDao(): InputMsgDao
 
 
     companion object {
@@ -26,6 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, DB_NAME)
+                .fallbackToDestructiveMigration()
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)

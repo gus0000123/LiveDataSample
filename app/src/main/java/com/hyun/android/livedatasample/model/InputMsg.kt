@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "inputMsg")
 data class InputMsg(
-    @PrimaryKey @ColumnInfo(name = "id") var msgId: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var msgId: Int = 0,
     @ColumnInfo(name = "msg") var msg: String = ""
 )
